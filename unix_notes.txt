@@ -105,6 +105,7 @@ $ man git-config  // manual for git-config, but $man git config, or it will open
 $ man git   // git manual
 $ man config  //
 
+$ touch <filename>  // creates a new file OR if the file already exists, it just updates the timestamp!
 
 cd   // go to home directory
 history | sort | less  // take history output, pipe into sort function, pipe that output into less function

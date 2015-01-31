@@ -1,0 +1,48 @@
+////// ClintonJNelson - Notes on Git ///////
+// New things I learned
+
+
+$ git remote add upstream <masterGithubDirectoryLink>  // Sync your clone to the Owner's master repository. Not sure the broad ramifications or possible complications of this.
+
+$ git config -l | sort  // Sorts your configs
+
+$ git init  // Create a new repository.
+            // Repository is place where you can story history of files.
+
+master x $  // there's really no $ for this. Master tells you the branch, and the x says: Differences or things in staging area. Check says: nothing different & nothing in the staging area.
+
+$ git st  // same as git status. "A" means "added". "M" means modified. "??" means untracked item.
+
+$ git rm --cached <filename>  // how to un-track things.
+
+$ git commit -m "message"  // how to commit a file to version control. This takes it out of the staging area and makes a "commit" of this version. Each commit has an ID (abbreviated in the output). Has a timestamp & message too. Records ALL CHANGES (differences). The author's signature (username & signature).
+      // Use PRESENT TENSE for your message
+
+$ git ci -m "message"  // alias for commit
+
+$ git log   // history of what you've done. Lists all of your messages. Like the status of all commits.
+
+$ git ll    // gives long version of log
+
+$ git la    // lists the changes.
+
+$ git checkout -- <file>  // can discard changes to any file in the staging area. Discards from the last tracked state.
+
+Modified/Add/Commit Cycle in Git
+
+$ git blame <filename>  // This says who is to blame for what was done - tells author of each line of text.
+
+// Can close an issue from the commit message by using specific commenting format. Close #224 will create links & manage GitHub from command line.
+
+// Create an ISSUE any time you want to fix a bug!
+
+
+Git LABELS
+  HEAD - always points to place in time you're currently looking at.
+  MASTER - it's the label of the core branch. Fish prompt will show what branch it's at.
+  BRANCH -  is a label pointing to a place in time. Adds a label to the current commit. All commits will be associated with new branch at the time it was committed.
+
+Checking out a branch makes it "active", but doesn't change where things are pointing.
+
+
+$ git branch -d <branchname>  // remove branch
