@@ -1,0 +1,32 @@
+cd   // go to home directory
+history | sort | less  // take history output, pipe into sort function, pipe that output into less function
+history | less  // pipe history output into less
+history  // history of the commands you have used
+ls    // list out cutrent directory
+cd ../../..   // go back three levels
+cd clintonjnelson   // going into a relative directory
+cd ..     // go back one level
+cd constanthatz   // go into a level
+pwd   // print current directory location
+cd /Users/cjn   // go into a directory (absolute)
+ll    // list out current directory, long
+man ls  // manual of list's commands
+ls -li  /
+ls -lh
+ls -lm
+ls -lr
+ls -tl
+ls -t
+ls ll
+cd /
+git config -l | sort
+git config
+git --version
+echo $PATH
+brew info fish
+brew info
+echo $SHELL
+ls -G
+git status
+git add -A
+subl .
