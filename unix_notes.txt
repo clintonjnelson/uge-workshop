@@ -1,3 +1,111 @@
+////// ClintonJNelson - Notes on Unix ///////
+// Things I learned
+
+
+$ git branch <branchname>; $ git checkout <branchname> is the step-wise way to do $ git checkout -b <branchname>.
+
+$ ls -G  // -G tells it to use pretty directory colors
+
+$ chsh   // Change shell
+
+~$ asdf   // red text means unrecognised
+~$ adsf   // red tilde means last command failed
+~$ fish   // blue tilde means last command success
+
+
+/////// LECTURE
+// When we type a command, where does it live? It lives in specific directories, and the shell looks for them in $PATH. $PATH are like the routes.
+
+~$ pwd  // Print working directory (where you are)
+
+// A path is absolute when it starts with a "/"
+// A path is relative when it does not start with a /
+// To be a power user, need to be able to move around.
+
+$ cd  // Allows you to provide a directory to move around. If you don't supply a path, it will take you to the root/home directory.
+
+home = /Users/cjn
+$ cd /  // takes you to the root - topmost container. Everything is in a subdirectory of this. Root can have no ambiguity. Root is restricted to admin users. You should never delete anything in the root.
+// blue are directories
+// white are files
+// pink are symbolic links (no contents, just link to something)
+// red are programs (you can run)
+// green box has permissions
+// note: mach_kernel
+
+$ ll      // lists directory long format & makes file size more readable. This is a FISH alias.
+$ ls -lh  // same as ll
+$ ls      // lists directory by alphabetical
+$ ls -t   // list directory by modification date
+    //left column - permissions
+    // "root" = root user (owner of dir/file)
+    // next is the group/user
+    // then size in bytes
+$ ls -l   // list directory by alpha, long format (more info)
+// you can combine FLAGS like "-tl" for by mod date & long format
+$ ls -r   // reverse
+$ ls -G   // use pretty colors
+$ ls -x   // prints
+$ ls -a   // list hidden files that start with dot (.<name>)
+$ la      // lists EVERYTHING
+$ ls -m   // lists files comma-separated
+
+
+How do you know what flags can be used?
+  Unix systems have command called "man" - short for manual
+    $ man ls
+  RTFM - read the freakin manual
+
+
+// Spaces are used to delimit commands. If space in filename, you will need to escape it with a backslash.
+
+
+NAMING CONVENTIONS
+  // Powerusers don't use spaces. User dash & underscore
+  // Case sensitivity. Linux is case sensitive, but Unix is NOT.
+  // Write ALL program filenames in LOWERCASE.
+
+
+We can use relative or absolute paths with "cd".
+  // Use ls to see what's in your directory.
+  // Use pwd to see where you are
+
+$ cd ../..    // this will take you back
+$ cd  // always takes you back home, whether in root or way down the list.
+$ cd ../<otherdirectory>  // This will take you to a sibling directory
+$ cd ~/<directoryOffOfHome>
+$ cd ls ~/<moreDirectories>   // Display list of stuff in another directory without moving there
+$ .     // Current directory
+$ subl .  // Open current directory in subl
+
+
+Shell Record with "history"
+  // You can provide a numeric argument to show number of last commands
+$ history | less  // Read some at a time with pipe & less
+                  // This pipes history into less
+                  // Example of Unix Input/Output redirection
+                  // "g" to top; "G" to bottom
+                  // Controls movement through single file
+
+$ |   // Pipe takes output of one command and puts it into another
+    $ history | sort | less
+        // history -> sort -> less
+
+$ history > <filename>  // Send output of a command to a file. Can send lots of stuff to a file with presumably any extension. IF FILE EXISTS, IT"S OVERWRITTEN.
+$ history >> <existingfile>   // BUT two arrows will APPEND. If file is new, it will just create new file.
+
+$ less <filename>   // Read filename in less
+$ cat <filename> less   // Read filename in less
+
+$ mv <filename> <destinationDirectory> <optionalNewName> // move file
+$ mv <filenameOld> <optionalDestination> <filenameNew>   // If you move with new name, it will rename. You can also just move the name without new location.
+$ $ mv </stuff/filenameOld> </stuff/optionalDestination> <filenameNew>  // If you're NOT currently in the directory, you'll need to provide the FULL name or it will move the file to where you are.
+
+$ man git-config  // manual for git-config, but $man git config, or it will open both git & config.
+$ man git   // git manual
+$ man config  //
+
+
 cd   // go to home directory
 history | sort | less  // take history output, pipe into sort function, pipe that output into less function
 history | less  // pipe history output into less
